@@ -1,0 +1,37 @@
+public class Operario extends Empregado{
+    private double valorProducao;
+    private double comissao;
+
+    public Operario(){}
+    public Operario(
+            String name, int codigoSetor, double salarioBase, double imposto,
+            double valorProducao, double comissao)
+    {
+        super(name, codigoSetor, salarioBase, imposto);
+        this.valorProducao = valorProducao;
+        this.comissao = comissao;
+    }
+
+    public Operario(
+            String name,
+            int codigoSetor,
+            double valorProducao, double comissao)
+    {
+        super(name, codigoSetor);
+        this.valorProducao = valorProducao;
+        this.comissao = comissao;
+    }
+
+
+    public double calcularSalario(double salarioBase, double imposto, double valorProducao, double comissao) {
+        return super.calcularSalario(salarioBase, imposto) + (valorProducao * (comissao/100));
+    }
+
+    public double getValorProducao() {
+        return valorProducao;
+    }
+
+    public void setValorProducao(double valorProducao) {
+        this.valorProducao = valorProducao;
+    }
+}
