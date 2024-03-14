@@ -6,8 +6,29 @@ public class Vendedor extends  Empregado {
     public Vendedor() {
     }
 
-    public Vendedor(String nome, String endereco, String telefone, int codigoSetor, double salarioBase, double imposto, double valorVendas, double comissao) {
-        super(nome, endereco, telefone, codigoSetor, salarioBase, imposto);
+    public Vendedor(
+    		String name, String address, String phoneNumber,
+    		int codigoSetor, double salarioBase, double imposto, 
+    		double valorVendas, double comissao) {
+        super(name, address, phoneNumber, codigoSetor, salarioBase, imposto);
+        this.valorVendas = valorVendas;
+        this.comissao = comissao;
+    }
+    public Vendedor(
+            String name, int codigoSetor, double salarioBase, double imposto,
+            double valorVendas, double comissao)
+    {
+        super(name, codigoSetor, salarioBase, imposto);
+        this.valorVendas = valorVendas;
+        this.comissao = comissao;
+    }
+
+    public Vendedor(
+            String name,
+            int codigoSetor,
+            double valorVendas, double comissao)
+    {
+        super(name, codigoSetor);
         this.valorVendas = valorVendas;
         this.comissao = comissao;
     }
@@ -27,9 +48,10 @@ public class Vendedor extends  Empregado {
     public void setComissao(double comissao) {
         this.comissao = comissao;
     }
-
-    @Override
+   
     public double calcularSalario() {
         return super.calcularSalario() + (valorVendas * (comissao/100));
     }
+
+
 }
