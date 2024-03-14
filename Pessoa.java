@@ -3,6 +3,7 @@ public class Pessoa {
     private String address;
     private String phoneNumber;
 
+    public Pessoa() {}
     public Pessoa(String name){
         this.name = name;
     }
@@ -38,3 +39,4 @@ public class Pessoa {
         this.phoneNumber = phoneNumber;
     }
 }
+
