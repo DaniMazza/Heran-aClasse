@@ -1,10 +1,10 @@
-
 public class Empregado extends Pessoa {
 
 	private int codigoSetor;
 	private double salarioBase;
 	private double imposto;
 
+	public Empregado() {}
 	public Empregado(
 		String name, String address, String phoneNumber, 
 		int codigoSetor, double salarioBase, double imposto) 
@@ -39,9 +39,8 @@ public class Empregado extends Pessoa {
 			this.codigoSetor = codigoSetor;
 		}
 	
-	public double calcularSalario(double salarioBase, double imposto) {
+	public double calcularSalario() {
 		double salario = salarioBase - (salarioBase * (imposto/100));
-		
 		return salario;
 	}
 			
